@@ -1,5 +1,7 @@
 FROM python:3.10-slim
 
+ENV TF_USE_LEGACY_KERAS=1
+
 WORKDIR /app
 
 COPY requirements.txt .
