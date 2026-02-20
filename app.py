@@ -13,7 +13,7 @@ st.set_page_config(
 # ---------------- LOAD MODEL ----------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("clean_model.h5")
+    return tf.keras.models.load_model("best_crop_model.h5")
 
 
 model = load_model()
