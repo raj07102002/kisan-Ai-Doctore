@@ -15,7 +15,6 @@ st.set_page_config(
 def load_model():
     return tf.keras.models.load_model("best_crop_model.keras")
 
-
 model = load_model()
 
 class_names = ['Healthy', 'Powdery', 'Rust']
