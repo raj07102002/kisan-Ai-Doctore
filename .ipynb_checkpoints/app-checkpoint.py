@@ -38,8 +38,8 @@ if uploaded_file is not None:
 
 
         # Preprocess
-        img_resized = img.resize((224, 224))
-        img_array = np.array(img_resized) 
+        img_resized = img.resize((244, 244))
+        img_array = np.array(img_resized) / 255.0
         img_array = np.expand_dims(img_array, axis=0)
 
         # Prediction
@@ -57,7 +57,7 @@ if uploaded_file is not None:
         # Confidence Bar
         st.progress(int(confidence))
 
-        if confidence < 60:
+        if confidence < 40:
             st.warning("⚠️ Model unsure hai. Clear image upload karein.")
         else:
             st.success(f"🌿 Disease: {predicted_class}")
